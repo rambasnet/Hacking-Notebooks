@@ -9,7 +9,6 @@
 -   gcc
 -   Jupyter Notebook
 -   Python3
--   Minimal C kernel for Jupyter: https://github.com/brendan-rius/jupyter-c-kernel
 
 # Install Required Tools
 
