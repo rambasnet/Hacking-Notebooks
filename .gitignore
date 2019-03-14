@@ -106,3 +106,4 @@ venv.bak/
 /hacking
 
 .DS_Store
+.ddb_history
