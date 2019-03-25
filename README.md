@@ -20,7 +20,7 @@
     -   `sudo pip install jupyter-c-kernel`
     -   `sudo install_c_kernel`
     - NOTE: if conda is used to install notebook, you must run notebook as root to run C kernel
--   Install Jupyter lab using cond
+-   Install Jupyter Lab using conda
     - `conda install -c conda-forge jupyterlab`
 
 # Play with Notebooks
