@@ -1,27 +1,24 @@
-// Credit: Wenliang Du
 #include <stdio.h>
+#include <string.h>
 
-void badfunction(char * data) {
-    char input[100];
-    int var = 0x11223344;
-
-    printf("Target address: %x\n", (unsigned) &var);
-    printf("Data var at target address before: 0x%x\n", var);
+void badfunction(char *data) {
+    char input[200];
+    //printf("Enter your name: ");
+    // scanf gives segfault
+    //scanf("%s", input);
+    // fgets doesn't work!
+    //fgets(input, sizeof(input)-1, stdin);
     strcpy(input, data);
+    printf("Hello, ");
+    printf(input);
+    printf("\ninput is @ 0x%08x\n", &input);
     register int ebp asm("ebp");
-    printf("%x\n", ebp+4);
-    printf("you entered: \n");
-    printf(data);
-
-    printf("\nvar @ 0x%08x = %x\n", &var, var);
+    printf("return address @ 0x%08x\n", (ebp+4));
+    // would be be nice to be able to print value at return add
 }
 
 int main(int argc, char* argv[]) {
-    int mainvar = 0x44332211;
-    printf("mainvar address: %x\n", (unsigned) &mainvar);
-    printf("Data at main var before: 0x%x\n", mainvar);
     badfunction(argv[1]);
-    printf("%s", "good bye!\n");
-    printf("Data at mainvar after: 0x%x\n", mainvar);
+    printf("%s\n", "good bye!");
     return 0;
 }
