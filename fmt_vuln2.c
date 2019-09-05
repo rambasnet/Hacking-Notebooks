@@ -3,7 +3,7 @@
 
 void badfunction(char *data) {
     char input[200];
-    printf("Enter your name: ");
+    //printf("Enter your name: ");
     // scanf gives segfault
     //scanf("%s", input);
     // fgets doesn't work!
