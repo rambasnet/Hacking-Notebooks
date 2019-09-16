@@ -9,7 +9,7 @@
 #include "hacking.h"
 #include "hacking-network.h"
 
-#define PORT 8080   // the port users will be connecting to
+#define PORT 80   // the port users will be connecting to
 #define WEBROOT "./webroot" // the web server's root directory
 
 void handle_connection(int, struct sockaddr_in *); // handle web requests
