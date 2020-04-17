@@ -3,7 +3,7 @@ void test_function(int a, int b, int c, int d) {
    char buffer[10];
 
    flag = 31337;
-   buffer[0] = 'A';
+   buffer[0] = 'ABCD';
 }
 
 int main() {
