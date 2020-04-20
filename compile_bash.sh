@@ -1,19 +1,11 @@
 #! /bin/bash
 
-# disable aslr
-read aslr < /proc/sys/kernel/randomize_va_space
-if (( $aslr != 0 )); then
-    if (( id -u != 0)); then
-        echo "Need sudo priviledge to disable aslr..."
-    fi
-    # echo password - provide password for sudo user
-    echo user | sudo -S ls /proc/sys/kernel/randomize_va_space
-    echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
-fi
+# this is the modified version of compile.sh script to make it work on Jupyter as a regular user
 
 # compile disabling all the security flags
+# -fomit-frame-pointer
 if (( $# == 1 )); then
-    gcc -g -m32 -fno-stack-protector -z execstack -no-pie $1 && echo "Output file is a.out"
+    gcc -g -m32 -fno-stack-protector  -z execstack -no-pie $1 && echo "Output file is a.out"
 elif (( $# == 2 )); then
     gcc -g -m32 -fno-stack-protector -z execstack -no-pie -o $2 $1
 else
