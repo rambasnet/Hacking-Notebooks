@@ -22,6 +22,6 @@ int main(int argc, char *argv[]) {
 
    // Debug output
    printf("[*] test_val @ 0x%08x = %d 0x%08x\n", &test_val, test_val, test_val);
-
+   printf("[*] text is @ %p\n", &text);
    exit(0);
 }

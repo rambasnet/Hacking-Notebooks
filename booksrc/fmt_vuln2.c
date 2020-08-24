@@ -18,6 +18,10 @@ void badfunction(char *data) {
 }
 
 int main(int argc, char* argv[]) {
+    if (argc == 1) {
+        printf("Usage: %s name\n", argv[0]);
+        exit(0);
+    }
     badfunction(argv[1]);
     printf("%s\n", "good bye!");
     return 0;

@@ -6,17 +6,32 @@
 
 # Requirements
 
-- Linux Bash
+- Ubuntu/Debian Linux Bash
 - gcc
 - Jupyter Notebook
 - Python2 and 3
+- gdb
+- peda - https://github.com/longld/peda
 
 # Install Required Tools
+- update Linux and install tools
+
+```bash
+sudo apt update
+sudo apt install curl build-essential ccache gdb gcc-multilib
+git clone https://github.com/longld/peda.git ~/peda
+echo "source ~/peda/peda.py" >> ~/.gdbinit
+```
 
 - Install Python 3.x Miniconda for Linux: https://conda.io/en/latest/miniconda.html
-- Once miniconda is installed, install Jupyter Notebook using conda
-    -   `conda install notebook`
 
+```bash
+curl -o Miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda.sh # pick defaults; python 3 is installed!
+conda update conda
+conda install notebook # jupyter notebook
+conda install -c conda-forge xeus-cling #c++ kernel
+```
 
 # Play with Notebooks
 
